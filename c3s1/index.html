@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css">
 
+
+
   <!-- syntax highlighting CSS -->
   <link rel="stylesheet" href="../css/syntax.css">
   <!-- Google webfont link -->
@@ -356,13 +358,13 @@
 <span class='n'>c</span> <span class='o'>=</span> <span class='n'>b</span><span class='o'>.</span><span class='n'>capitalize</span>
 
 <span class='n'>b</span> <span class='c1'>#=&gt; &quot;hello&quot;</span>
-<span class='n'>c</span> <span class='c1'>#=&gt; &quot;HELLO&quot;</span>
+<span class='n'>c</span> <span class='c1'>#=&gt; &quot;Hello&quot;</span>
 
 <span class='n'>d</span> <span class='o'>=</span> <span class='s2'>&quot;hello&quot;</span> 
 <span class='n'>e</span> <span class='o'>=</span> <span class='n'>d</span><span class='o'>.</span><span class='n'>capitalize!</span>
 
-<span class='n'>d</span> <span class='c1'>#=&gt; &quot;HELLO&quot;</span>
-<span class='n'>e</span> <span class='c1'>#=&gt; &quot;HELLO&quot;</span>
+<span class='n'>d</span> <span class='c1'>#=&gt; &quot;Hello&quot;</span>
+<span class='n'>e</span> <span class='c1'>#=&gt; &quot;Hello&quot;</span>
 </code></pre></div>
 <p>This example is pretty important. In the first case <code>capitalize</code> gives back “HELLO”, but leaves the original string untouched.</p>
 <svg enable-background='new 0 0 153.667 96.666' height='96.666px' id='Layer_1' xml:space='preserve' version='1.1' viewBox='0 0 153.667 96.666' width='153.667px' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
@@ -379,7 +381,7 @@
 </g>
 <rect fill='none' height='27' stroke='#939598' stroke-miterlimit='10' stroke-width='3' width='27' x='6.89' y='56.807' />
 <text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 19.1484 73.8071)'>c</text>
-<text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 90.8896 74.8071)'>“HELLO”</text>
+<text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 90.8896 74.8071)'>“Hello”</text>
 <g>
   <g>
     <line fill='none' stroke='#000000' stroke-miterlimit='10' x1='33.89' x2='71.829' y1='70.807' y2='70.807' />
@@ -415,7 +417,7 @@
 <text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 19.1484 26)'>d</text>
 <rect fill='none' height='27' stroke='#939598' stroke-miterlimit='10' stroke-width='3' width='27' x='6.89' y='56.807' />
 <text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 19.1484 73.8071)'>e</text>
-<text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 91.7783 26.8066)'>“HELLO”</text>
+<text font-family='&apos;MyriadPro-Regular&apos;' font-size='12' transform='matrix(1 0 0 1 91.7783 26.8066)'>“Hello”</text>
 <path d='M144.556,24c0,6.627-5.373,12-12,12h-39
   c-6.627,0-12-5.373-12-12v-3c0-6.627,5.373-12,12-12h39c6.627,0,12,5.373,12,12V24z' fill='none' stroke='#F7941E' stroke-miterlimit='10' stroke-width='3' />
 </svg><div class='highlight'><pre><code class='ruby'><span class='o'>&gt;</span> <span class='nb'>name</span> <span class='o'>=</span> <span class='s2'>&quot;Dave&quot;</span>
@@ -447,13 +449,16 @@
 
 <pre><code>$ gem install sinatra</code></pre>
 
-<p>at the command line.</p>
+<p>at the command line. We will also need a few other rubygems, so install these too:</p>
+
+<pre><code>$ gem install rack-test</code></pre>
 <div class='exercise alert alert-info'><strong>Task:</strong>
 <ol>
 <li>
 <p>Install sinatra: at the command line run</p>
 
-<pre><code> $ gem install sinatra</code></pre>
+<pre><code> $ gem install sinatra
+ $ gem install rack-test</code></pre>
 </li>
 
 <li>
@@ -594,7 +599,43 @@ $ ruby app.rb
 <li>Finish the exercises from class.</li>
 
 <li>Do the <a href='http://www.codecademy.com/tracks/ruby'>Codecademy Ruby track</a> Sections 1 and 2.</li>
+
+<li>Get a <a href='https://www.heroku.com/'>Heroku</a> account and upload an ssh key (see below).</li>
 </ol>
+</div>
+<h3 id="about_heroku">About Heroku</h3>
+
+<p><a href="https://www.heroku.com/">Heroku</a> is a cloud-based web hosting solution, specifically designed for hosting web applications. It started out as a Rails host, but has since branched out into other frameworks (e.g. Sinatra, Node.js) and languages (e.g. Java, Python).</p>
+
+<p>They aim to completely manage your apps online infrastructure: you provide them with the code, they set it up and run it online. If you have a lot of users and want to scale your app up, they make it easy to allocate more resources so you can handle the increased traffic (for a price!).</p>
+
+<h3 id="setting_up_an_account">Setting up an account</h3>
+
+<p>Before you deploy your app to heroku you need to create an account.</p>
+<div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>Sign up for an account at <a href='https://www.heroku.com/'>Heroku</a>.</li>
+
+<li>After you log in, download and install the heroku toolbelt. (This will allow you to interact with heroku from the command line).</li>
+</ol>
+</div>
+<h3 id="setting_up_ssh_with_heroku"> Setting up ssh with heroku</h3>
+
+<p>The final part of the set up is to upload your ssh keys to Heroku. You might remember about ssh keys from the initial installation instructions: they’re basically a way of identifying yourself to a server without typing in your password each time.</p>
+
+<p>The heroku toolbelt makes this very easy. On the command line (in any folder) type:</p>
+
+<pre><code>$ heroku keys:add</code></pre>
+
+<p>You can check it worked by typing:</p>
+
+<pre><code>$ heroku keys</code></pre>
+
+<p>It should list the ssh key that you just added.</p>
+<div class='exercise alert alert-info'><strong>Task:</strong>
+<p>Upload your ssh key to heroku by running</p>
+
+<pre><code>$ heroku keys:add</code></pre>
 </div>
 	</div>
 
